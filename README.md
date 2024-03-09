@@ -1,17 +1,13 @@
 # ecommerce-api
 
-<hr>
-
 # CATEGORIES
-
-<hr>
 
 ### FIELDS
 
 - name
 - slug
 
-## END POINTS
+### END POINTS
 
 #### GET /api/v1/categories
 
