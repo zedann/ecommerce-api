@@ -5,8 +5,8 @@ import asyncHandler from "express-async-handler";
 
 /**
  *
- * @param req Request
- * @param res
+ * @description get all categories
+ * @route GET /api/v1/categories
  */
 export const getCategories = asyncHandler(
   async (req: Request, res: Response) => {

@@ -11,9 +11,11 @@ import {
 } from "../controllers/categoryController";
 
 router.route("/").get(getCategories).post(createCategorie);
+
 router
   .route("/:id")
   .get(getCategorie)
   .patch(updateCategory)
   .delete(deleteCategory);
+  
 export default router;
