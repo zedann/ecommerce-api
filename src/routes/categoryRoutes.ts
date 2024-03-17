@@ -1,4 +1,5 @@
 import express from "express";
+import { param, validationResult } from "express-validator";
 
 const router = express.Router();
 
@@ -17,5 +18,5 @@ router
   .get(getCategorie)
   .patch(updateCategory)
   .delete(deleteCategory);
-  
+
 export default router;
