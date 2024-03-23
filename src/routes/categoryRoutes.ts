@@ -1,7 +1,11 @@
 import express from "express";
-import { param, validationResult } from "express-validator";
-
 const router = express.Router();
+import {
+  createCategoryValidator,
+  deleteCategoryValidator,
+  getCategoryValidator,
+  updateCategoryValidator,
+} from "../utils/validators/categoryValidator";
 
 import {
   createCategorie,
@@ -11,12 +15,15 @@ import {
   updateCategory,
 } from "../controllers/categoryController";
 
-router.route("/").get(getCategories).post(createCategorie);
+router
+  .route("/")
+  .get(getCategories)
+  .post(createCategoryValidator, createCategorie);
 
 router
   .route("/:id")
-  .get(getCategorie)
-  .patch(updateCategory)
-  .delete(deleteCategory);
+  .get(getCategoryValidator, getCategorie)
+  .patch(updateCategoryValidator, updateCategory)
+  .delete(deleteCategoryValidator, deleteCategory);
 
 export default router;
